@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="row">
+        <h1 class="text-center">New Museum</h1>
+        <div class="col-md-6 offset-md-3">
+            <form action="/museums" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id='title' name='museum[title]' required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id='location' name='museum[location]' required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="price">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input class="form-control" type="number" min="0" id='price' name='museum[price]'
+                            aria-label="price" aria-describedby="price-label" placeholder="0.00" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" name="museum[description]" id='description'
+                        required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Images</label>
+                    <input class="form-control" type="file" id="image" name="image" multiple>
+                </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-success">Add Museum</button>
+                </div>
+            </form>
+            <a href="/museums">Go back to Museums</a>
+        </div>
+    </div>
